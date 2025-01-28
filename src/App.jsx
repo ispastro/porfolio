@@ -8,7 +8,9 @@ import Contact from "./pages/Contact";
 import "./index.css";
 
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  
+  const [theme , setTheme ] =useState(localStorage.getItem('theme')||'light');
+
 
   const toggleTheme = () => {
     setTheme((prev) => {
@@ -17,14 +19,17 @@ function App() {
       return newTheme;
     });
   };
+  
+  useEffect(()=>{
+    if(theme==='dark'){
+      document.documentElement.classList.add('dark');
 
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
     }
-  }, [theme]);
+    else{
+      document.documentElement.classList.remove('dark');
+
+    }
+  } ,[theme]);
 
   return (
     <Router>

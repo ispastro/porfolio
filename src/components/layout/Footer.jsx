@@ -68,7 +68,7 @@ function Footer() {
 
         {/* Footer Note */}
         <p className="text-gray-600 dark:text-gray-300">
-          © 2024 Portfolio. All rights reserved.
+          © 2025 Haile's  Portfolio. All rights reserved.
         </p>
       </div>
     </footer>

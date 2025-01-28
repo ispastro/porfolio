@@ -13,47 +13,78 @@ function Contact() {
   const [errors, setErrors] = useState({});
   const [submitStatus, setSubmitStatus] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    if (name === "message" && value.length > 500) {
-      setErrors((prev) => ({ ...prev, message: "Message cannot exceed 500 characters." }));
-      return;
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
     }
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())
+    ) {
+      newErrors.email = "Enter a valid email address.";
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required.";
+    } else if (formData.message.length > 500) {
+      newErrors.message = "Message cannot exceed 500 characters.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // Return true if no errors
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (formData.message.length > 500) {
-      setErrors((prev) => ({ ...prev, message: "Message cannot exceed 500 characters." }));
-      return;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Clear error message when user types
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-    // Simulate form submission
-    setSubmitStatus("success");
-    setFormData({ name: "", email: "", message: "" });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      // Simulate successful submission
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setSubmitStatus("error");
+    }
   };
 
   const lottieStyle = {
-    height: 400,
-    width: 400,
+    height: 600,
+    width: 600,
+    borderRadius: "1rem",
   };
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="flex flex-start text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-        Get In Touch
+        Get In Touch.
       </h1>
 
-      {/* Main container with flex layout */}
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between max-w-6xl mx-auto gap-8">
-        {/* Contact Form Section */}
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between max-w-6xl mx-auto gap-10">
         <div className="w-full lg:w-1/2">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <div className="bg-white dark:bg-gray-700 dark:text-white rounded-lg shadow-lg p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
+                <label
+                  htmlFor="name"
+                  className="block text-gray-700 dark:text-gray-300 font-medium mb-1"
+                >
                   Name
                 </label>
                 <div className="relative">
@@ -72,9 +103,11 @@ function Contact() {
                 </div>
               </div>
 
-              {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-gray-700 dark:text-gray-300 font-medium mb-1"
+                >
                   Email
                 </label>
                 <div className="relative">
@@ -93,9 +126,11 @@ function Contact() {
                 </div>
               </div>
 
-              {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-gray-700 dark:text-gray-300 font-medium mb-1"
+                >
                   Message (max 500 characters)
                 </label>
                 <div className="relative">
@@ -126,20 +161,19 @@ function Contact() {
             </form>
 
             {submitStatus === "success" && (
-              <div className="mt-4 p-4 bg-green-50 text-green-700 rounded-lg">
+              <div className="mt-4 p-4 bg-green-200 text-green-700 rounded-lg">
                 Message sent successfully!
               </div>
             )}
             {submitStatus === "error" && (
               <div className="mt-4 p-4 bg-red-50 text-red-700 rounded-lg">
-                Failed to send message. Please try again.
+                Please fill out the form correctly before submitting.
               </div>
             )}
           </div>
         </div>
 
-        {/* Lottie Animation Section */}
-        <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+        <div className="w-full hidden sm:block lg:w-1/2 mb-8 lg:mb-0 rounded-full ">
           <Lottie
             animationData={contactAnimation}
             loop={true}

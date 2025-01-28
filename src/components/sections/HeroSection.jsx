@@ -26,7 +26,7 @@ function HeroSection() {
               <Typewriter
                 options={{
                   strings: [
-                    "Software Engineer",
+                    "Passionate Developer",
                     "Web Developer",
                     "Front End Developer",
                   ],

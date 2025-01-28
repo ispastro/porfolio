@@ -1,9 +1,10 @@
 // Import necessary dependencies and assets
-import { useGitHubRepos } from "../hooks/useGitHubRepos";
+
 import ProjectCard from "../components/cards/ProjectCard";
 import movieApp from "../assets/images/movie-app.png";
 import onlineExam from "../assets/images/onlineExam.png";
 import todoapp from "../assets/images/todoapp.png";
+import {useGitHubRepos} from "../hooks/useGitHubRepos";
 
 function Projects() {
   // Fetch repositories using a custom hook
@@ -43,7 +44,7 @@ function Projects() {
     <div className="space-y-16 animate-fade-in">
       {/* Section for featured projects */}
       <section>
-        <h1 className="section-title  text-gray-400">My Projects</h1>
+        <h1 className="section-title  text-gray-400 ">My Projects</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredProjects.map((project) => (
             <ProjectCard key={project.id} {...project} />
@@ -53,8 +54,8 @@ function Projects() {
 
       {/* Section for recent GitHub activity */}
       <section>
-        <h2 className="text-2xl font-bold text-[#001220] dark:text-gray-400 mb-6">
-          Recent GitHub Repo
+        <h2 className="text-4xl font-bold text-[#001220] text-gray-200 mb-6">
+          Recent  Repos
         </h2>
         {loading ? (
           <div className="flex justify-center">

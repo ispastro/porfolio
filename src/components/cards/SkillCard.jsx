@@ -49,34 +49,44 @@ function SkillCard({ name, icon, color, progress, index }) {
 
   return (
     <div
-      ref={cardRef}
-      className="skill-card"
-      style={{
-        animationDelay: `${index * 100}ms`,
-      }}
-    >
-      <div className="w-24 h-24 relative">
-        <CircularProgressbar
-          value={progressValue}
-          text={`${progressValue}%`}
-          styles={buildStyles({
-            rotation: 0.25,
-            strokeLinecap: 'round',
-            textSize: '16px',
-            pathTransitionDuration: 0.5,
-            pathColor: getColorValue(color),
-            textColor: getColorValue(color),
-            trailColor: '#1f2937',
-          })}
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className={`text-4xl ${color} icon-container`}>
-            {icon}
-          </div>
-        </div>
-      </div>
-      <p className="mt-4 text-gray-300 text-lg">{name}</p>
+  ref={cardRef}
+  className="skill-card"
+  style={{
+    animationDelay: `${index * 100}ms`,
+  }}
+>
+  <div className="w-24 h-24 relative">
+    <CircularProgressbar
+      value={progressValue}
+      styles={buildStyles({
+        rotation: 0.25,
+        strokeLinecap: 'round',
+        textSize: '16px',
+        pathTransitionDuration: 0.5,
+        pathColor: getColorValue(color),
+        textColor: getColorValue(color), // Applies to progress value
+        trailColor: '#1f2937', // Remaining part color
+      })}
+    />
+    {/* Icon in the center */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className={`text-4xl ${color} icon-container`}>{icon}</div>
     </div>
+    {/* Percentage on the trail */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <p
+        className="text-white  text-xs font-bold"
+        style={{
+          transform: 'translateY(60%)', // Adjust position slightly toward the trail
+        }}
+      >
+        { progressValue}%
+      </p>
+    </div>
+  </div>
+  <p className="mt-4 text-gray-300 text-lg">{name}</p>
+</div>
+
   );
 }
 

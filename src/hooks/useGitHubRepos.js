@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useGitHubRepos(username) {
+export  function  useGitHubRepos (username){
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,3 +26,4 @@ export function useGitHubRepos(username) {
 
   return { repos, loading, error };
 }
+

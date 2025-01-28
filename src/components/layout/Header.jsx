@@ -18,7 +18,7 @@ function Header({ theme, toggleTheme }) {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-[#001220]  text-teal-400 shadow-lg">
+    <header className="sticky top-0 z-50 bg-white dark:bg-[#001220]  shadow-lg  text-teal-400">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -33,6 +33,18 @@ function Header({ theme, toggleTheme }) {
 
           {/* Mobile: Hamburger menu */}
           <div className="md:hidden flex items-center">
+
+          <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors mr-6"
+              aria-label="Toggle Theme"
+            >
+              {theme === "light" ? (
+                <FaMoon className="text-gray-800" size={20} />
+              ) : (
+                <FaSun className="text-yellow-400" size={20} />
+              )}
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-600 dark:text-gray-300"
@@ -63,7 +75,7 @@ function Header({ theme, toggleTheme }) {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+              className="p-2 rounded-lg  bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
             >
               {theme === "light" ? (
                 <FaMoon className="text-gray-800" size={20} />
