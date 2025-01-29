@@ -26,7 +26,7 @@ function HeroSection() {
               <Typewriter
                 options={{
                   strings: [
-                    "Passionate Developer",
+                    "Software Engineer",
                     "Web Developer",
                     "Front End Developer",
                   ],
@@ -51,7 +51,7 @@ function HeroSection() {
           </div>
 
           {/* Right Section */}
-          <div className="hidden lg:flex lg:w-1/2 justify-center">
+          <div className="hidden sm:block lg:flex lg:w-1/2 justify-center">
             <DotLottieReact
               src="homeAnimation.lottie"
               loop

@@ -20,7 +20,7 @@ function Footer() {
           <div className="flex justify-center text-gray-400 space-x-6 mb-4">
             <a
               href="https://www.facebook.com"
-              className="hover:text-teal-300 transition transform hover:scale-110"
+              className="hover:text-teal-400 transition transform hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -28,7 +28,7 @@ function Footer() {
             </a>
             <a
               href="https://twitter.com"
-              className="hover:text-teal-300 transition transform hover:scale-110"
+              className="hover:text-teal-400 transition transform hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -36,7 +36,7 @@ function Footer() {
             </a>
             <a
               href="https://linkedin.com/in/haile-asaye21"
-              className="hover:text-teal-300 transition transform hover:scale-110"
+              className="hover:text-teal-400 transition transform hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -44,7 +44,7 @@ function Footer() {
             </a>
             <a
               href="https://instagram.com/risedowr"
-              className="hover:text-teal-300 transition transform hover:scale-110"
+              className="hover:text-teal-400 transition transform hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -52,7 +52,7 @@ function Footer() {
             </a>
             <a
               href="https://github.com/ispastro"
-              className="hover:text-teal-300 transition transform hover:scale-110"
+              className="hover:text-teal-400 transition transform hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -60,7 +60,7 @@ function Footer() {
             </a>
           </div>
 
-          {/* Vertical Line */}
+          {/* horizontal  Line */}
           <div className="flex justify-center">
             <div className="w-48 border-t border-gray-500"></div>
           </div>

@@ -24,7 +24,7 @@ function Header({ theme, toggleTheme }) {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src={Logo} // Update this path to your logo's location
+              src={Logo} // path to your logo's location
               alt="Logo"
               className="w-12 h-12 object-contain"
 

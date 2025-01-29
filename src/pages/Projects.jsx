@@ -54,7 +54,7 @@ function Projects() {
 
       {/* Section for recent GitHub activity */}
       <section>
-        <h2 className="text-4xl font-bold text-[#001220] text-gray-200 mb-6">
+        <h2 className="text-4xl font-bold  text-gray-200 mb-6">
           Recent  Repos
         </h2>
         {loading ? (
