@@ -13,6 +13,7 @@
     "@lottiefiles/dotlottie-react": "^0.9.2",
     "lottie": "^0.0.1",
     "lottie-react": "^2.4.1",
+    "lottie-web-light": "^1.1.0",
     "react": "^18.3.1",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",

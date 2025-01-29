@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import TestimonialCard from "../cards/TestimonialCard";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-import Natnaeal from "../../assets/images/Natnaeal.png";
+
 import Angela from "../../assets/images/Angela.png";
-import Liya from "../../assets/images/Liya.png";
+
 import Samueal from "../../assets/images/Samueal.png";
 import softwareEng from "../../assets/images/softwareEng.png";
 
@@ -18,7 +18,7 @@ const testimonials = [
   {
     name: "Natnaeal Mekonnen",
     role: "CEO of Horizon Tech Solutions",
-    imageUrl: Natnaeal,
+    imageUrl: "https://via.placeholder.com/150",
     quote: "This developer exceeded expectations with their expertise and dedication, delivering a solution that transformed our ideas into reality. Highly recommended!",
   },
   {
@@ -30,7 +30,7 @@ const testimonials = [
   {
     name: "Marissa Mayer",
     role: "Former CEO at Yahoo",
-    imageUrl: Liya,
+    imageUrl: "https://via.placeholder.com/150",
     quote: "Excellent attention to detail and great design sensibility.",
   },
   {

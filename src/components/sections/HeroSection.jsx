@@ -53,7 +53,7 @@ function HeroSection() {
           {/* Right Section */}
           <div className="hidden sm:block lg:flex lg:w-1/2 justify-center">
             <DotLottieReact
-              src="homeAnimation.lottie"
+              src="/homeAnimation.lottie"
               loop
               autoplay
               style={{ width: "500px", height: "500px" }}
